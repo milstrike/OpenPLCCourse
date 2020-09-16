@@ -1,0 +1,285 @@
+<?xml version='1.0' encoding='utf-8'?>
+<project xmlns:ns1="http://www.plcopen.org/xml/tc6.xsd" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.plcopen.org/xml/tc6_0201">
+  <fileHeader companyName="Unknown" productName="LogicGate1" productVersion="1" creationDateTime="2020-09-16T18:44:28"/>
+  <contentHeader name="LogicGate1" modificationDateTime="2020-09-16T18:51:43">
+    <coordinateInfo>
+      <fbd>
+        <scaling x="10" y="10"/>
+      </fbd>
+      <ld>
+        <scaling x="10" y="10"/>
+      </ld>
+      <sfc>
+        <scaling x="10" y="10"/>
+      </sfc>
+    </coordinateInfo>
+  </contentHeader>
+  <types>
+    <dataTypes/>
+    <pous>
+      <pou name="LogicGate1" pouType="program">
+        <interface>
+          <localVars>
+            <variable name="S11">
+              <type>
+                <BOOL/>
+              </type>
+              <initialValue>
+                <simpleValue value="FALSE"/>
+              </initialValue>
+            </variable>
+            <variable name="S12">
+              <type>
+                <BOOL/>
+              </type>
+              <initialValue>
+                <simpleValue value="FALSE"/>
+              </initialValue>
+            </variable>
+            <variable name="MOTOR1">
+              <type>
+                <BOOL/>
+              </type>
+            </variable>
+            <variable name="S21">
+              <type>
+                <BOOL/>
+              </type>
+              <initialValue>
+                <simpleValue value="FALSE"/>
+              </initialValue>
+            </variable>
+            <variable name="S22">
+              <type>
+                <BOOL/>
+              </type>
+              <initialValue>
+                <simpleValue value="FALSE"/>
+              </initialValue>
+            </variable>
+            <variable name="MOTOR2">
+              <type>
+                <BOOL/>
+              </type>
+            </variable>
+            <variable name="S31">
+              <type>
+                <BOOL/>
+              </type>
+              <initialValue>
+                <simpleValue value="TRUE"/>
+              </initialValue>
+            </variable>
+            <variable name="MOTOR3">
+              <type>
+                <BOOL/>
+              </type>
+            </variable>
+          </localVars>
+        </interface>
+        <body>
+          <LD>
+            <comment localId="1" height="40" width="130">
+              <position x="20" y="10"/>
+              <content>
+                <xhtml:p><![CDATA[AND GATE]]></xhtml:p>
+              </content>
+            </comment>
+            <leftPowerRail localId="2" height="40" width="10">
+              <position x="20" y="60"/>
+              <connectionPointOut formalParameter="">
+                <relPosition x="10" y="20"/>
+              </connectionPointOut>
+            </leftPowerRail>
+            <rightPowerRail localId="3" height="40" width="10">
+              <position x="350" y="60"/>
+              <connectionPointIn>
+                <relPosition x="0" y="20"/>
+                <connection refLocalId="6">
+                  <position x="350" y="80"/>
+                  <position x="310" y="80"/>
+                </connection>
+              </connectionPointIn>
+            </rightPowerRail>
+            <contact localId="4" height="20" width="21" negated="false">
+              <position x="60" y="70"/>
+              <connectionPointIn>
+                <relPosition x="0" y="10"/>
+                <connection refLocalId="2">
+                  <position x="60" y="80"/>
+                  <position x="30" y="80"/>
+                </connection>
+              </connectionPointIn>
+              <connectionPointOut>
+                <relPosition x="21" y="10"/>
+              </connectionPointOut>
+              <variable>S11</variable>
+            </contact>
+            <contact localId="5" height="20" width="21" negated="false">
+              <position x="120" y="70"/>
+              <connectionPointIn>
+                <relPosition x="0" y="10"/>
+                <connection refLocalId="4">
+                  <position x="120" y="80"/>
+                  <position x="81" y="80"/>
+                </connection>
+              </connectionPointIn>
+              <connectionPointOut>
+                <relPosition x="21" y="10"/>
+              </connectionPointOut>
+              <variable>S12</variable>
+            </contact>
+            <coil localId="6" height="20" width="21" negated="false">
+              <position x="290" y="70"/>
+              <connectionPointIn>
+                <relPosition x="0" y="10"/>
+                <connection refLocalId="5">
+                  <position x="290" y="80"/>
+                  <position x="141" y="80"/>
+                </connection>
+              </connectionPointIn>
+              <connectionPointOut>
+                <relPosition x="21" y="10"/>
+              </connectionPointOut>
+              <variable>MOTOR1</variable>
+            </coil>
+            <comment localId="7" height="40" width="140">
+              <position x="420" y="10"/>
+              <content>
+                <xhtml:p><![CDATA[OR GATE]]></xhtml:p>
+              </content>
+            </comment>
+            <leftPowerRail localId="8" height="80" width="10">
+              <position x="420" y="60"/>
+              <connectionPointOut formalParameter="">
+                <relPosition x="10" y="20"/>
+              </connectionPointOut>
+              <connectionPointOut formalParameter="">
+                <relPosition x="10" y="60"/>
+              </connectionPointOut>
+            </leftPowerRail>
+            <rightPowerRail localId="9" height="40" width="10">
+              <position x="720" y="60"/>
+              <connectionPointIn>
+                <relPosition x="0" y="20"/>
+                <connection refLocalId="12">
+                  <position x="720" y="80"/>
+                  <position x="670" y="80"/>
+                </connection>
+              </connectionPointIn>
+            </rightPowerRail>
+            <contact localId="10" height="20" width="21" negated="false">
+              <position x="480" y="70"/>
+              <connectionPointIn>
+                <relPosition x="0" y="10"/>
+                <connection refLocalId="8">
+                  <position x="480" y="80"/>
+                  <position x="430" y="80"/>
+                </connection>
+              </connectionPointIn>
+              <connectionPointOut>
+                <relPosition x="21" y="10"/>
+              </connectionPointOut>
+              <variable>S21</variable>
+            </contact>
+            <contact localId="11" height="20" width="21" negated="false">
+              <position x="480" y="110"/>
+              <connectionPointIn>
+                <relPosition x="0" y="10"/>
+                <connection refLocalId="8">
+                  <position x="480" y="120"/>
+                  <position x="430" y="120"/>
+                </connection>
+              </connectionPointIn>
+              <connectionPointOut>
+                <relPosition x="21" y="10"/>
+              </connectionPointOut>
+              <variable>S22</variable>
+            </contact>
+            <coil localId="12" height="20" width="21" negated="false">
+              <position x="650" y="70"/>
+              <connectionPointIn>
+                <relPosition x="0" y="10"/>
+                <connection refLocalId="10">
+                  <position x="650" y="80"/>
+                  <position x="501" y="80"/>
+                </connection>
+                <connection refLocalId="11">
+                  <position x="650" y="80"/>
+                  <position x="540" y="80"/>
+                  <position x="540" y="120"/>
+                  <position x="501" y="120"/>
+                </connection>
+              </connectionPointIn>
+              <connectionPointOut>
+                <relPosition x="21" y="10"/>
+              </connectionPointOut>
+              <variable>MOTOR2</variable>
+            </coil>
+            <comment localId="13" height="40" width="100">
+              <position x="920" y="10"/>
+              <content>
+                <xhtml:p><![CDATA[NOT GATE]]></xhtml:p>
+              </content>
+            </comment>
+            <leftPowerRail localId="14" height="40" width="10">
+              <position x="920" y="60"/>
+              <connectionPointOut formalParameter="">
+                <relPosition x="10" y="20"/>
+              </connectionPointOut>
+            </leftPowerRail>
+            <rightPowerRail localId="15" height="40" width="10">
+              <position x="1170" y="60"/>
+              <connectionPointIn>
+                <relPosition x="0" y="20"/>
+                <connection refLocalId="17">
+                  <position x="1170" y="80"/>
+                  <position x="1130" y="80"/>
+                </connection>
+              </connectionPointIn>
+            </rightPowerRail>
+            <contact localId="16" height="20" width="21" negated="true">
+              <position x="970" y="70"/>
+              <connectionPointIn>
+                <relPosition x="0" y="10"/>
+                <connection refLocalId="14">
+                  <position x="970" y="80"/>
+                  <position x="930" y="80"/>
+                </connection>
+              </connectionPointIn>
+              <connectionPointOut>
+                <relPosition x="21" y="10"/>
+              </connectionPointOut>
+              <variable>S31</variable>
+            </contact>
+            <coil localId="17" height="20" width="21" negated="false">
+              <position x="1110" y="70"/>
+              <connectionPointIn>
+                <relPosition x="0" y="10"/>
+                <connection refLocalId="16">
+                  <position x="1110" y="80"/>
+                  <position x="991" y="80"/>
+                </connection>
+              </connectionPointIn>
+              <connectionPointOut>
+                <relPosition x="21" y="10"/>
+              </connectionPointOut>
+              <variable>MOTOR3</variable>
+            </coil>
+          </LD>
+        </body>
+      </pou>
+    </pous>
+  </types>
+  <instances>
+    <configurations>
+      <configuration name="Config0">
+        <resource name="Res0">
+          <task name="task0" priority="0" interval="T#20ms">
+            <pouInstance name="instance0" typeName="LogicGate1"/>
+          </task>
+        </resource>
+      </configuration>
+    </configurations>
+  </instances>
+</project>
