@@ -1,0 +1,17 @@
+PROGRAM SimpleProgram1
+  VAR
+    s1 : BOOL := FALSE;
+    MOTOR : BOOL;
+  END_VAR
+
+  MOTOR := s1;
+END_PROGRAM
+
+
+CONFIGURATION Config0
+
+  RESOURCE Res0 ON PLC
+    TASK task0(INTERVAL := T#20ms,PRIORITY := 0);
+    PROGRAM instance0 WITH task0 : SimpleProgram1;
+  END_RESOURCE
+END_CONFIGURATION
